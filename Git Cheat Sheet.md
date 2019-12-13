@@ -48,3 +48,13 @@ Shows content differences between two branches
 
 1. Git push error “You must verify your email address.”\
 **$git remote set-url origin  https://<i></i>YourName:YourPassword<i></i>@github.com/YourName/YourRepo.git** 
+
+2. How do you push just a single Git branch (and no other branches)?\
+https://stackoverflow.com/questions/820178/how-do-you-push-just-a-single-git-branch-and-no-other-branches \
+I am working on a local git repository. There are two branches, master and feature_x. \
+I want to push feature_x to the remote repo, but I do not want to push the changes on the master branch. \
+Will a git push origin feature_x from my feature_x branch (feature_x branch already exists on remote) work? \
+
+    > **1. git checkout feature_x** <br>
+    > **2. git push origin feature_x**
+
