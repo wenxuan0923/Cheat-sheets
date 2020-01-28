@@ -82,4 +82,119 @@ Variable name and function name are **case sensitive** in JavaScript
 Find reminder of devision (find even or odd number)
 > var remainder = 11 % 3;
 
+**Array**
+Store several pieces of information in one array (items don't have to be the same data type)
+> var ourArray = ["John", 23]
+
+Nested Array
+> var ourArray = [["the universe", 42], ["everything", 101010]]
+
+Access data using index in array, and modify them
+
+> var ourArray = [50, 60, 70] \
+> var ourData = ourArray[0] \
+> console.log(ourData) // this is 50 \
+> ourArray[0] = 45 // reassign the first value of the array \
+> console.log(ourArray) // this gonna give [45, 60, 70]
+
+Access multi-dimensional array using index
+> var myArray = [[1,2,3], [4,5,6], [7,8,9], [10,11,12]]; \
+> var myData = myArray[2][1]; \
+> console.log(myData); // this is 8
+
+Manipulate array using push() function
+> var myArray = [["John", 23], ["cat", 2]]; \
+> myArray.push(["dog", 3]); \
+> // myArray is now [["John", 23], ["cat", 2], ["dog", 3]]
+
+Manipulate array using pop() function
+> var ourArray = [1,2,3] \
+> var removedFromOurArray = ourArray.pop() // This gonna remove the last item from the array  \
+> // removedFromOurArray now equals 3, and ourArray now equals [1,2]  
+
+Manipulate array using shift(), unshift() function
+> var ourArray = ["Stimpson", "J", ["cat"]] \
+> var removedFromOurArray = ourArray.shift() // This gonna remove the first item from the array  \
+> // removedFromOurArray now equals "Stimpson", and ourArray now equals ["J", ["cat"]] 
+
+> var ourArray = ["Stimpson", "J", "cat"]; \
+> ourArray.shift(); // ourArray now equals ["J", "cat"] \
+> ourArray.unshift("Happy"); // ourArray now equals ["Happy", "J", "cat"] 
+
+**Reusable code using functions**
+
+> function name_of_your_function(){ \
+>   console.log("Heyya, World"); \
+> } \
+> name_of_your_function();
+
+Global scope and functions
+> var myGlobal = 10; // this is a global variable\ 
+>
+> function fun1(){ \
+>  oopsGlobal = 5; // without a var keyword, this will become a **global** variable automatically \
+>  }
+>
+> function fun2(){ \
+>   var ourpur = ""; \
+>   if (typeof myGlobal != "undefined"){ \
+>      output += "myGlobal: " + myGlobal; \
+>    } \
+>   if (typeof oopsGlobal != "undefined"){ \
+>      output += "oopsGlobal: " + oopsGlobal; \
+>    } \
+>   console.log(output); \
+>   }  \
+
+> fun1()
+> fun2()
+
+
+Local scope and functions (only available inside the function)
+> function myLocalScope(){ \
+>   var myVar = 4; \
+>   console.log(myVar); \
+> } \
+>
+> myLocalScope(); \
+> console.log(myVar); // This gonna throw an error: myVar is not defined
+
+It's possible to have global and local variable having the same name
+
+> var outerWear = "T-Shirt"; // This is a global variable \
+> 
+> function myOutfit(){ \
+>   var outerWear = "sweater"; // This is a local variable  \
+>   return outerWear;  \
+> } \
+>
+> console.log(myOutfit()); // This is sweater  \
+> console.log(outerWear); // This is T-Shirt
+
+Understanding Undefined value returned from a function (a function doesn't have to have a return statement)
+> var sum = 0 \
+> function addThree(){ \
+>   aum += 3  \
+> }
+So if we log it out, it will be undefined
+
+> function nextInLine(arr, item){ \
+>  arr.push(item);   // push add an item at the end of array \
+>  return arr.shift(); // shift remove the first item and return the first item \
+>  } \
+> var testArr = [1,2,3,4,5]; \
+> console.log("Before: " + testArr) // This gonna give you [1,2,3,4,5] \
+> console.log(nextInLine(testArr, 6)) // 1 \
+> console.log("After: " + testArr) // [2,3,4,5,6] \
+  
+Boolean variable
+> function ourTrueOrFalse(isItTrue){ \
+>   if (isItTrue){ \
+>     return "Yes,it's true" \
+>   } \
+>   return "No, it's false" \
+>  } \
+> ourTrueOrFalse(false) \
+> ourTrueOrFalse(true)
+
 
