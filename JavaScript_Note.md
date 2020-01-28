@@ -144,11 +144,9 @@ Global scope and functions
 >      output += "oopsGlobal: " + oopsGlobal; \
 >    } \
 >   console.log(output); \
->   }  \
-
+>   }  
 > fun1()
 > fun2()
-
 
 Local scope and functions (only available inside the function)
 > function myLocalScope(){ \
@@ -176,7 +174,7 @@ Understanding Undefined value returned from a function (a function doesn't have 
 > function addThree(){ \
 >   aum += 3  \
 > }
-So if we log it out, it will be undefined
+So if we log it out, it will be undefined/NULL
 
 > function nextInLine(arr, item){ \
 >  arr.push(item);   // push add an item at the end of array \
@@ -197,4 +195,95 @@ Boolean variable
 > ourTrueOrFalse(false) \
 > ourTrueOrFalse(true)
 
+Check for equality: The double equal sign will convert the data to same data type, but triple equal sign will not
 
+> 3==3  true \
+> 3===3 true \
+> 3=="3" true \
+> 3==="3" false 
+
+!= means not equal to. Similarly, !== (strict inequality operator) will not convert data types
+
+Logical and && /or ||
+> if (val <= 50 && val >=25){ \
+>    return '20 to 50' \
+> } else if (val <= 90 && val >=60){ \
+>    return '60 to 90' \
+> } else { \
+>    return 'No' \
+>}
+
+**Switch statement**
+> function switchOfStuff(val){ \
+> var answer = ''  \
+> switch(val){  \
+> case 'a': // this is checking if val == 1  \
+> answer = 'alpha';  \
+> break;  \
+> case 'b': // this is checking if val == 2  \
+> answer = 'beta';  \
+> break;  \
+> case 'c':  \
+> answer = 'gamma'  \
+> break;  \
+> default: \
+> answer = 'stuff'; \
+> break; \
+> }  \
+> return answer;
+> }
+
+Test for several numbers
+> function switchOfStuff(val){ \
+> var answer = ''  \
+> switch(val){  \
+> case 1: \
+> case 2: \
+> case 3:  \
+> answer = 'Low'  \
+> break;  \
+> case 4:
+> case 5:
+> case 6:
+> answer = 'Mid'; \
+> break; \
+> }  \
+> return answer;
+
+**JavaScript Objects**
+> var ourDog = { \ 
+> "name": "Camper", // Property: value (any datatype) \
+> "legs":4, \
+> "tails":1, \
+> "friends":["everything!"]}; \
+> }
+
+Access property of an object
+> ourDog.name \
+> ourDog["name"] // If there is a space in the name of the property of the object
+
+Updating object properties
+> ourDog.name = "Happy Camper"; \
+> console.log(ourDog.name); //This will be "Happy Camper"
+
+Add new properties to an object
+> ourDog.bark = "bow-wow"; \
+> ourDog["bark"] = "bow-wow";
+
+Delete properties from object
+> delete ourDog.bark;
+
+Check whether an object has a certain property
+
+> var myObj = { \
+> gift: 'pony', \
+> pet: 'kitten',  \
+> bed: 'sleigh'}
+
+> function checkObj(checkProp){ \
+>  if (myObj.hasOwnProperty(checkProp)){  \
+>    return myObj[checkProp];  \
+>    } else {  \
+>    return "not found"  \
+>  }  \
+> }
